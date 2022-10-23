@@ -3,7 +3,7 @@
  * Plugin Name: DinoMatic Demo Frame
  * Plugin URI: https://github.com/dinomatic/demo-frame
  * Description: A simple plugin to add a frame at the bottom of theme pages on DinoMatic demos.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: DinoMatic
  * Author URI: https://dinomatic.com
  * Author email: info@dinomatic.com
@@ -14,7 +14,7 @@
 
 defined('ABSPATH') || exit;
 
-if (! defined('DF_PRODUCT_URL')) {
+if (! defined('DF_PRODUCT_NAME') || ! defined('DF_PRODUCT_URL')) {
 	return;
 }
 

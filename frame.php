@@ -8,7 +8,7 @@
 
 	<a href="<?php echo esc_url(DF_PRODUCT_URL.'#pricing'); ?>"
 		class="demo-frame--buy">
-		Buy Now
+		Get <?php esc_html_e(DF_PRODUCT_NAME); ?> Now
 	</a>
 
 	<a href="<?php echo esc_url(DF_PRODUCT_URL); ?>"
@@ -24,7 +24,7 @@
 		.demo-frame {
 			position: fixed;
 			bottom: 0.5rem;
-			right: 3.5rem;
+			left: 1.5rem;
 			display: none;
 			align-items: center;
 			justify-content: end;
@@ -36,6 +36,7 @@
 			display: inline-block;
 			padding: 0.5rem 1rem;
 			font-size: 1rem;
+			color: #000;
 			background-color: #fff;
 		}
 		.demo-frame--buy {
@@ -43,6 +44,7 @@
 		}
 		.demo-frame--close {
 			background-color: #8795a1;
+			border: 0 none;
 			border-radius: 0;
 		}
 	</style>
