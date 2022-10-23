@@ -1,20 +1,30 @@
 <?php
 /**
- * Plugin Name: DinoMatic Frame
- * Plugin URI: https://github.com/dinomatic-frame
- * Description: A simple plugin that adds a frame on top of theme headers on DinoMatic demos.
- * Version: 0.0.1
+ * Plugin Name: DinoMatic Demo Frame
+ * Plugin URI: https://github.com/dinomatic/demo-frame
+ * Description: A simple plugin to add a frame at the bottom of theme pages on DinoMatic demos.
+ * Version: 1.0.0
  * Author: DinoMatic
  * Author URI: https://dinomatic.com
  * Author email: info@dinomatic.com
- * Text Domain: dinomatic-frame
+ * Text Domain: demo-frame
  * Domain Path: /i18n
  * License: GPL 2
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-define( 'DF_ABSPATH',   plugin_dir_path( __FILE__ ) );
-define( 'DF_URL',       plugin_dir_url( __FILE__ ) );
-define( 'DF_BASENAME',  plugin_basename( __FILE__ ) );
-define( 'DF_NAME',      'DinoMatic Frame' );
+if (! defined('DF_PRODUCT_URL')) {
+	return;
+}
+
+if (! function_exists('include_demo_frame')) {
+	function include_demo_frame()
+	{
+		require_once plugin_dir_path(__FILE__).'/frame.php';
+	}
+
+	add_action('sikika_after_wp_footer', 'include_demo_frame');
+	add_action('spinoko_after_wp_footer', 'include_demo_frame');
+	add_action('akurai_after_wp_footer', 'include_demo_frame');
+}
