@@ -28,3 +28,14 @@ if (! function_exists('include_demo_frame')) {
 	add_action('spinoko_after_wp_footer', 'include_demo_frame');
 	add_action('akurai_after_wp_footer', 'include_demo_frame');
 }
+
+if (! function_exists('include_perf_script')) {
+	function include_perf_script()
+	{
+		wp_enqueue_script( 'dm-perf-test-scripts', plugin_dir_url(__FILE__) . '/perf.js', [], '20151215', true );
+	}
+
+	if (defined('DM_INCLUDE_PERF_SCRIPT')) {
+		add_action('wp_enqueue_scripts', 'include_perf_script');
+	}
+}
