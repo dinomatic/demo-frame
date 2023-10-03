@@ -11,12 +11,20 @@
 		Get <?php esc_html_e(DF_PRODUCT_NAME); ?> Now
 	</a>
 
-	<a href="<?php echo esc_url(DF_PRODUCT_URL); ?>"
-		class="demo-frame--back">
-		Go Back
+	<a href="https://dinomatic.com/contact"
+		class="demo-frame--contact"
+		title="Get in touch">
+		📨
 	</a>
 
-	<button class="demo-frame--close">
+	<a href="<?php echo esc_url(DF_PRODUCT_URL); ?>"
+		class="demo-frame--back"
+		title="Go back">
+		🔙
+	</a>
+
+	<button class="demo-frame--close"
+		title="Close this frame">
 		&times;
 	</button>
 
@@ -32,6 +40,7 @@
 		}
 		.demo-frame--buy,
 		.demo-frame--back,
+		.demo-frame--contact,
 		.demo-frame--close {
 			display: inline-block;
 			padding: 0.5rem 1rem;
@@ -41,6 +50,9 @@
 		}
 		.demo-frame--buy {
 			background-color: #4dc0b5;
+		}
+		.demo-frame--contact {
+			background-color: #8795a1;
 		}
 		.demo-frame--close {
 			background-color: #8795a1;
